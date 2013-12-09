@@ -1,0 +1,19 @@
+{
+    "name": "bem-node-stub",
+    "version": "0.0.1",
+    "dependencies": {
+        "bem-node": "0.7.2",
+        "enb": "0.8.36",
+        "enb-bemhtml": "0.1.1",
+        "node-static": "*"
+    },
+    "devDependencies": {
+        "csscomb": "1.0.0"
+    },
+    "scripts": {
+        "start": "node app/ex/ex.server.js --socket 3000"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    }
+}
