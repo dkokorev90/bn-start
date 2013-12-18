@@ -1,5 +1,5 @@
 NPM_BIN?= ./node_modules/.bin
-CSSCOMB_DIRS?= data.blocks common.blocks pages.blocks
+CSSCOMB_DIRS?= blocks
 
 .PHONY: all
 all:: clean

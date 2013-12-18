@@ -16,13 +16,11 @@ BN.addDecl('i-page').staticProp({
      */
     getPageJson: function(json) {
         return {
-            block: 'b-page',
-            content: [
-                {
-                    block: 'content',
-                    content: json
-                }
-            ]
+            block: 'page',
+            content: {
+                block: 'content',
+                content: json
+            }
         };
     },
 

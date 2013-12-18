@@ -1,0 +1,5 @@
+({
+    noDeps: [
+        { mods: { type: 'bemhtml' } }
+    ]
+})

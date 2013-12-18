@@ -56,7 +56,7 @@ table
 {
     display: table;
 
-    content: "";
+    content: '';
 }
 .cf:after
 {
