@@ -1,7 +1,7 @@
 BN.addDecl('page-test', 'page', {
     route: /^\/$/
 }).staticProp({
-    init: function(matchers) {
+    init: function() {
         return this.out({
             block: 'hello-world'
         });

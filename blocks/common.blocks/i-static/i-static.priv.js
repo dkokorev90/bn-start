@@ -1,8 +1,11 @@
+/* jshint unused:false */
+
 (function () {
 
-    var static = require('node-static'),
-        file = new static.Server('.'),
-        CONTENT_TYPES = ['css', 'js', 'png', 'gif', 'jpg', 'svg', 'ico', 'ttf', 'otf', 'woff', 'eot', 'txt', 'html', 'json'],
+    var nodeStatic = require('node-static'),
+        file = new nodeStatic.Server('.'),
+        CONTENT_TYPES = ['css', 'js', 'png', 'gif', 'jpg', 'svg', 'ico',
+            'ttf', 'otf', 'woff', 'eot', 'txt', 'html', 'json'],
         route = new RegExp('^.*\\.(' + CONTENT_TYPES.join('|') + ')$');
 
     BN.addDecl('static', 'page', {
@@ -11,7 +14,7 @@
         init: function(matchers, req, res) {
             file.serve(req, res, function(err, res) {
                 if (err) {
-                    console.error('Error serving ' + req.url + ' - ' + err.message)
+                    console.error('Error serving ' + req.url + ' - ' + err.message);
                     BN('i-response').error(err);
                 }
             });

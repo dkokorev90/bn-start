@@ -1,5 +1,5 @@
 BN.addDecl('page').elemTemplate({
-    'css': function(ctx) {
+    css: function(ctx) {
         var json = ctx.json();
         ctx.bem(false);
 
@@ -15,7 +15,7 @@ BN.addDecl('page').elemTemplate({
             var ie = json.ie;
             if (ie === true) {
                 return [6, 7, 8, 9].map(function(v) {
-                    return { elem: 'css', url: json.url + '.ie' + v + '.css', ie: 'IE ' + v }
+                    return { elem: 'css', url: json.url + '.ie' + v + '.css', ie: 'IE ' + v };
                 });
             } else {
                 var hideRule = !ie ?

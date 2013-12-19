@@ -8,7 +8,9 @@
         "node-static": "*"
     },
     "devDependencies": {
-        "csscomb": "1.0.0"
+        "csscomb": "2.0.0",
+        "jscs": "*",
+        "jshint-groups": "*"
     },
     "scripts": {
         "start": "node app/ex/ex.server.js --socket 3000"

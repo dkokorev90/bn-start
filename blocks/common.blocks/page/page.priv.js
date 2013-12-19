@@ -52,7 +52,7 @@ BN.addDecl('page').blockTemplate(function(ctx) {
                         json.meta,
                         { elem: 'ua' },
                         json.head
-                    ],
+                    ]
                 },
                 json,
                 json.foot
@@ -60,40 +60,43 @@ BN.addDecl('page').blockTemplate(function(ctx) {
         }
     ];
 }).elemTemplate({
-    'doctype': function(ctx) {
+    doctype: function(ctx) {
         return ctx.json().doctype;
     },
 
-    'html': function(ctx) {
+    html: function(ctx) {
         return {
             tag: 'html',
-            attrs: { class: 'i-ua_js_no i-ua_css_standard' },
+            attrs: { 'class': 'i-ua_js_no i-ua_css_standard' },
             content: ctx.content()
         };
     },
 
-    'head': function(ctx) {
+    head: function(ctx) {
         return {
             tag: 'head',
             content: ctx.content()
         };
     },
 
-    'meta': function(ctx) {
+    meta: function(ctx) {
         return {
             tag: 'meta',
             attrs: ctx.json().attrs
         };
     },
 
-    'xUACompatible': function(ctx) {
+    xUACompatible: function(ctx) {
         return {
             tag: 'meta',
-            attrs: { 'http-equiv': 'X-UA-Compatible', content: ctx.json()['x-ua-compatible'] || 'IE=EmulateIE7, IE=edge' }
+            attrs: {
+                'http-equiv': 'X-UA-Compatible',
+                content: ctx.json()['x-ua-compatible'] || 'IE=EmulateIE7, IE=edge'
+            }
         };
     },
 
-    'favicon': function(ctx) {
+    favicon: function(ctx) {
         return {
             tag: 'link',
             attrs: { rel: 'shortcut icon', href: ctx.json().url }

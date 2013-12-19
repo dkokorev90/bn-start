@@ -1,44 +1,49 @@
 NPM_BIN?= ./node_modules/.bin
-CSSCOMB_DIRS?= blocks
+JSCS ?= $(NPM_BIN)/jscs
+JSHINT ?= $(NPM_BIN)/jshint-groups
+CSSCOMB ?= $(NPM_BIN)/csscomb
+CHECK_DIRS?= blocks configs
 
-.PHONY: all
-all:: clean
-all:: install
-all:: dev
+all:: clean install dev
 
 # remove builded files
-.PHONY: clean
 clean::
 	rm -f `find ./app/*/* ! -name '*bemdecl.js'`
 
 # install dependenses
-.PHONY: install
 install::
 	npm install
 
+.PHONY: all install clean
+
 # rebuild project (use it when adding new files)
-.PHONY: rebuild
 rebuild::
 	./node_modules/enb/bin/enb make
 
 # rebuild project and use development configs
-.PHONY: dev
-dev:: csscomb
-dev::
-	$(info ===> Пересобираем (development mode))
+dev:: lint csscomb
+	$(info ===> Rebuilding (development mode))
 	@ YENV=development ./node_modules/enb/bin/enb make
 
 # rebuild project and use productions configs
-.PHONY: prod
-prod:: csscomb
+prod:: lint csscomb
 prod::
-	$(info ===> Пересобираем (production mode))
+	$(info ===> Rebuilding (production mode))
 	@ YENV=production ./node_modules/enb/bin/enb make
 
+.PHONY: dev prod rebuild
+
 # css coding style formatting
-.PHONY: csscomb
 csscomb::
-	$(info ===> Причесываем стили)
-	@ $(NPM_BIN)/csscomb $(CSSCOMB_DIRS) -v
+	$(info ===> CSS style formating)
+	@ $(NPM_BIN)/csscomb $(CHECK_DIRS) -v
 
+# js code checking
+lint::
+	$(info ===> JS coding style checking)
+	$(info > JSHINT)
+	@ $(JSHINT)
+	$(info > JSCS)
+	@ $(JSCS) $(CHECK_DIRS)
 
+.PHONY: csscomb lint

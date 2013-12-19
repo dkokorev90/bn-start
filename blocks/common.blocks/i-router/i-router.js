@@ -14,4 +14,3 @@ BEM.decl('i-router', null, {
         }
     }
 });
-

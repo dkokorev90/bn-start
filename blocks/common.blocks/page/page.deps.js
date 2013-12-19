@@ -1,6 +1,6 @@
 ({
     mustDeps: [
-        { block: 'i-bem', elems: ['dom', 'json'], mods: {'init': 'auto'} },
+        { block: 'i-bem', elems: ['dom', 'json'], mods: { init: 'auto' } },
         { block: 'i-bh' }
     ],
 
