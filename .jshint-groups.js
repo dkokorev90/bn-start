@@ -56,7 +56,10 @@ module.exports = {
                 'blocks*/**/*.priv.js'
             ],
             excludes: [
-                'blocks/**/*.deps.js'
+                'blocks/**/*.deps.js',
+                'blocks/**/*.lib.js',
+                'blocks/**/*.lib.js',
+                'blocks/**/_lib/*.js'
             ]
         },
         deps: {

@@ -4,11 +4,13 @@
         ".bem/**",
         ".git/**",
         ".githooks/**",
-        "configs/**",
         "_/**",
         "libs/**",
         "node_modules/**",
-        "app/*/*.js"
+        "app/*/*.js",
+        "blocks/*/*/*.lib.js",
+        "blocks/*/*/*.lib.js",
+        "blocks/*/*/_lib/*.js"
     ],
     "requireCurlyBraces": [
         "else",

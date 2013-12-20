@@ -27,7 +27,6 @@ dev:: lint csscomb
 
 # rebuild project and use productions configs
 prod:: lint csscomb
-prod::
 	$(info ===> Rebuilding (production mode))
 	@ YENV=production ./node_modules/enb/bin/enb make
 
@@ -40,10 +39,8 @@ csscomb::
 
 # js code checking
 lint::
-	$(info ===> JS coding style checking)
-	$(info > JSHINT)
+	$(info ===> JS code checking)
 	@ $(JSHINT)
-	$(info > JSCS)
 	@ $(JSCS) $(CHECK_DIRS)
 
 .PHONY: csscomb lint

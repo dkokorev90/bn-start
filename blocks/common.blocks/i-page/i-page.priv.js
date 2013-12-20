@@ -12,6 +12,15 @@ var pathPrefix = (function() {
 
 BN.addDecl('i-page').staticProp({
     /**
+     * Define user local before page out
+     * @override
+     */
+    out: function() {
+        BN('i18n').setLocale(BN('i-router').getReq());
+
+        return this.__base.apply(this, arguments);
+    },
+    /**
      * @override
      */
     getPageJson: function(json) {

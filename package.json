@@ -1,10 +1,11 @@
 {
-    "name": "bem-node-stub",
+    "name": "bn-start",
     "version": "0.0.1",
     "dependencies": {
-        "bem-node": "0.7.2",
+        "bem-node": "0.7.6",
         "enb": "0.8.36",
         "enb-bemhtml": "0.1.1",
+        "locale": "*",
         "node-static": "*"
     },
     "devDependencies": {
