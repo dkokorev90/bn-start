@@ -4,7 +4,7 @@ JSHINT ?= $(NPM_BIN)/jshint-groups
 CSSCOMB ?= $(NPM_BIN)/csscomb
 CHECK_DIRS?= blocks configs
 
-all:: clean install dev
+all:: clean install app dev
 
 # remove builded files
 clean::
@@ -28,7 +28,9 @@ dev:: lint csscomb
 # rebuild project and use productions configs
 prod:: lint csscomb
 	$(info ===> Rebuilding (production mode))
+	@ rm -rf .bem/tmp && rm -rf _freeze
 	@ YENV=production ./node_modules/enb/bin/enb make
+	@ borschik freeze -i app/*/ > freeze-info.json
 
 .PHONY: dev prod rebuild
 

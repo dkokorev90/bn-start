@@ -1,13 +1,12 @@
 // base template for page
 BN.addDecl('page').blockTemplate(function(ctx) {
     var json = ctx.json(),
-        pathPrefix = BN('i-page').getPathPrefix(),
         headSt = [
-            { elem: 'css', url: pathPrefix + '.css' }
+            { elem: 'css', url: BN('i-global').stCSS }
         ],
         footSt = [
             { elem: 'js', url: '//yandex.st/jquery/2.0.3/jquery.min.js' },
-            { elem: 'js', url: pathPrefix + '.js' }
+            { elem: 'js', url: BN('i-global').stJS }
         ];
 
     ctx.tag('body');

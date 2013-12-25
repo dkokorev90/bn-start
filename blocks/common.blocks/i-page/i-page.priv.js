@@ -41,4 +41,4 @@ BN.addDecl('i-page').staticProp({
     getPathPrefix: function() {
         return pathPrefix;
     }
-});
+}).done();

@@ -1,5 +1,7 @@
 {
+    "paths" : {
+    },
     "freeze_paths": {
-        "./": "_"
+        "./": "_freeze"
     }
 }
