@@ -1,6 +1,7 @@
 ({
     mustDeps: [
-        { block: 'i-bem', elems: ['dom', 'json'], mods: { init: 'auto' } },
+        { block: 'i-bem', elem: 'dom', mods: { init: 'auto' } },
+        { block: 'i-bem', elem: 'json' },
         { block: 'i-bh' },
         { block: 'i18n' },
         { block: 'i-global', elems: ['config', 'reset'] }
