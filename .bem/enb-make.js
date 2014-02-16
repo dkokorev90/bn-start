@@ -6,7 +6,7 @@ module.exports = require('../node_modules/bem-node/enb-make')
     .levels([
         // в зависимости от переменной окружения YENV, подключаем нужные конфиги
         'configs/' + process.env['YENV'] + '/common.blocks',
-        'blocks/common.blocks',
-        'blocks/data.blocks',
-        'blocks/pages.blocks'
+        'blocks/common',
+        'blocks/data',
+        'blocks/pages'
     ]);

@@ -2,17 +2,16 @@
     "name": "bn-start",
     "version": "0.0.1",
     "dependencies": {
-        "bem-node": "0.7.6",
-        "enb": "0.8.36",
-        "enb-bemhtml": "0.1.1",
+        "bem-node": "*",
+        "enb": "*",
         "locale": "*",
         "node-static": "*"
     },
     "devDependencies": {
-        "csscomb": "2.0.0",
+        "csscomb": "*",
         "jscs": "*",
         "jshint-groups": "*",
-        "borschik": "0.4.2"
+        "borschik": "*"
     },
     "scripts": {
         "start": "node app/ex/ex.server.js --socket 3000"
